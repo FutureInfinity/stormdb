@@ -107,7 +107,7 @@ class StormDB {
     if (value === undefined) {
       this.setValue(key);
     } else {
-      let extraPointers = [value];
+      let extraPointers = [key];
       //if (typeof key === "string") extraPointers = key.split(".");
       //else extraPointers = [key];
 
