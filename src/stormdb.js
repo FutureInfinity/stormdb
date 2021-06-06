@@ -94,9 +94,9 @@ class StormDB {
   }
 
   get(value) {
-    let extraPointers;
-    if (typeof value === "string") extraPointers = value.split(".");
-    else extraPointers = [value];
+    let extraPointers = [value];
+    //if (typeof value === "string") extraPointers = value.split(".");
+    //else extraPointers = [value];
 
     let clone = Object.assign(Object.create(Object.getPrototypeOf(this)), this);
     clone.pointers = [...clone.pointers, ...extraPointers];
@@ -107,9 +107,9 @@ class StormDB {
     if (value === undefined) {
       this.setValue(key);
     } else {
-      let extraPointers;
-      if (typeof key === "string") extraPointers = key.split(".");
-      else extraPointers = [key];
+      let extraPointers = [value];
+      //if (typeof key === "string") extraPointers = key.split(".");
+      //else extraPointers = [key];
 
       this.setValue(value, extraPointers);
     }
